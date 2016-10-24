@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
+
+</head>
+<body>
+
+<h1 id="bigOne"></h1>
+
+<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCzyQtz-tMDN4C5oRrx_9JWQD0ZGFttr90",
+        authDomain: "testlearn-5990b.firebaseapp.com",
+        databaseURL: "https://testlearn-5990b.firebaseio.com",
+        storageBucket: "",
+        messagingSenderId: "301484075225"
+    };
+    firebase.initializeApp(config);
+
+    var bigOne = document.getElementById('bigOne');
+    var dbRef = firebase.database().ref().child('Person1');
+    dbRef.on('value', snap => bigOne.innerText = snap.toString());
+</script>
+</body>
+
+
+
+</html>
